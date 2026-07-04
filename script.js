@@ -21,7 +21,7 @@ const API = "https://script.googleusercontent.com/macros/echo?user_content_key=A
             ${
                 gift.rezervovane
                 ? "<b>Rezervované</b>"
-                : <button onclick="reserve(${gift.id})">Rezervovať</button>
+                : "<button onclick="reserve(${gift.id})">Rezervovať</button>"
             }
 
         </div>

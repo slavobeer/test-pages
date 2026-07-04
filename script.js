@@ -31,22 +31,21 @@ const API = "https://script.google.com/macros/s/AKfycbzbhMR8R9wguY4qnYxa52KPdQ53
 
 }
 
-async function reserve(id){
+async function reserve(id) {
 
     const meno = prompt("Vaše meno");
+    if (!meno) return;
 
-    if(!meno) return;
+    const form = new URLSearchParams();
+    form.append("id", id);
+    form.append("meno", meno);
 
-    await fetch(API,{
-        method:"POST",
-        body:JSON.stringify({
-            id:id,
-            meno:meno
-        })
+    await fetch(API, {
+        method: "POST",
+        body: form
     });
 
     loadGifts();
-
 }
 
 loadGifts();
